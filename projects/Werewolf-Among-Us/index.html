@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Werewolf Among Us: Multimodal Resources for Modeling Persuasion Behaviors in Social Deduction Games">
+  <meta name="keywords" content="social deduction game, social ai, mutlimodal learning, dataset">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Werewolf Among Us: Multimodal Resources for Modeling Persuasion Behaviors in Social Deduction Games</title>
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/gt_icon.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <style>
+    table {
+      font-family: Arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    th {
+      background-color: #dddddd;
+    }
+  </style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Werewolf Among Us: Multimodal Resources for Modeling Persuasion Behaviors in Social Deduction Games</h1>
+          <div class="is-size-4 publication-conference">
+            <span class="conference-block" style="color:darkred">ACL Findings 2023</span>
+          </div>
+          <br>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://bolinlai.github.io/">Bolin Lai*</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://icefoxzhx.github.io/">Hongxin Zhang*</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://aptx4869lm.github.io/">Miao Liu*</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?hl=en&user=EnC_6s0AAAAJ">Aryan Pariani*</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://fkryan.github.io/">Fiona Ryan</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://vjwq.github.io/">Wenqi Jia</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://www.shirley.id/">Shirley Anugrah Hayati</a><sup>4</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://rehg.org/">James M. Rehg</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://cs.stanford.edu/~diyiy/">Diyi Yang</a><sup>5</sup>,
+            </span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Georgia Institute of Technology</span>&nbsp;&nbsp;&nbsp;
+            <span class="author-block"><sup>2</sup>Shanghai Jiao Tong University</span>&nbsp;&nbsp;&nbsp;
+            <span class="author-block"><sup>3</sup>Meta AI</span><br>
+            <span class="author-block"><sup>4</sup>University of Minnesota</span>&nbsp;&nbsp;&nbsp;
+            <span class="author-block"><sup>5</sup>Stanford University</span>
+          </div>
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href="https://aclanthology.org/2023.findings-acl.411.pdf" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-file-pdf"></i></span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://github.com/SALT-NLP/PersuationGames" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fab fa-github"></i></span>
+                  <span>Code</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://huggingface.co/datasets/bolinlai/Werewolf-Among-Us" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fa fa-database" aria-hidden="true"></i></span>
+                  <span>Dataset</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Teaser-->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <center>
+        <img src="figures/teaser.png"  style="width:100%;">
+      </center>
+    </div>
+    <!-- <div class="columns is-centered has-text-centered">
+        <div class="content has-text-justified">
+          <p>
+            Demonstration of the six persuasion strategies included in our dataset and the corresponding video. 
+          </p>
+        </div>
+    </div> -->
+    <br>
+    <br>
+    <div class="hero-body">
+      <center>
+        <iframe width="864" height="486" src="https://www.youtube.com/embed/Uch5sUwDs2w?si=Kpl1dbzbp8wGHNQa" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </center>
+    </div>
+  </div>
+</section>
+<!-- End teaser -->
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Abstract</h2>
+    <div class="columns is-centered has-text-centered">
+        <div class="content has-text-justified">
+          <p>
+            Persuasion modeling is a key building block for conversational agents. 
+            Existing works in this direction are limited to analyzing textual dialogue corpora. 
+            We argue that visual signals also play an important role in understanding human persuasive behaviors. 
+            In this paper, we introduce the first multimodal dataset for modeling persuasion behaviors. 
+            Our dataset includes 199 dialogue transcriptions and videos captured in a multi-player social deduction game setting, 26,647 utterance level annotations of persuasion strategy, and game level annotations of deduction game outcomes. 
+            We provide extensive experiments to show how dialogue context and visual signals benefit persuasion strategy prediction. 
+            We also explore the generalization ability of language models for persuasion modeling and the role of persuasion strategies in predicting social deduction game outcomes. 
+          </p>
+        </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+
+        <h2 class="title is-3">Six Persuasion Strategies</h2>
+        <div class="container is-max-desktop">
+          <div class="hero-body">
+            <center>
+              <img src="figures/label.png"  style="width:100%;">
+            </center>
+          </div>
+          <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+              <div class="content has-text-justified">
+                <p>
+                  Utterance-level persuasion strategy annotations. AUL refers to the average utterance length in terms of the number of words in an utterance and α refers to Krippendorff’s alpha.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <br>
+        
+        <h2 class="title is-3">Model Architecture</h2>
+        <div class="container is-max-desktop">
+          <div class="hero-body">
+            <center>
+              <img src="figures/method.png"  style="width:50%;">
+            </center>
+          </div>
+        </div>
+
+        <h2 class="title is-3">Experiments</h2>
+        <div class="container is-max-desktop">
+          <div class="hero-body">
+            <center>
+              <img src="figures/experiments.png"  style="width:100%;">
+            </center>
+          </div>
+        </div>
+
+        <h2 class="title is-3">Ablation Study of Context Length</h2>
+        <div class="container is-max-desktop">
+          <div class="hero-body">
+            <center>
+              <img src="figures/ablation.png"  style="width:100%;">
+            </center>
+          </div>
+        </div>
+
+        <h2 class="title is-3">Domain Generalization</h2>
+        <div class="container is-max-desktop">
+          <div class="hero-body">
+            <center>
+              <img src="figures/generalization.png"  style="width:100%;">
+            </center>
+          </div>
+          <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+              <div class="content has-text-justified">
+                <p>
+                  We report the testing performance on the Ego4D dataset using models trained only on YouTube data (w.o. Fine-tuning), and trained on YouTube data and further fine-tuned with Ego4D data (w. Fine-tuning). We also report the performance (refer to Table 3) of the models trained only on Ego4D dataset (Ego4D Only) as comparison.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <br>
+
+        <h2 class="title is-3">SVM Weights Visualization for Vote Prediction</h2>
+        <div class="container is-max-desktop">
+          <div class="hero-body">
+            <center>
+              <img src="figures/weight_vis.png"  style="width:70%;">
+            </center>
+          </div>
+          <div class="columns is-centered has-text-centered">
+            <div class="column is-four-fifths">
+              <div class="content has-text-justified">
+                <p>
+                  The connection between a strategy and 0 means this strategy contributes to the prediction of 0 (i.e. the voter doesn’t vote for the candidate). Likewise, the connection between a strategy and 1 denotes this strategy contributes to the prediction of 1 (i.e. the voter votes for the candidate). The transparency of lines corresponds to the weights of logistic regression. A less transparent line suggests a greater weight and more impact on the output.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@inproceedings{lai2023werewolf,
+      title={Werewolf among us: Multimodal resources for modeling persuasion behaviors in social deduction games},
+      author={Lai, Bolin and Zhang, Hongxin and Liu, Miao and Pariani, Aryan and Ryan, Fiona and Jia, Wenqi and Hayati, Shirley Anugrah and Rehg, James and Yang, Diyi},
+      booktitle={Findings of the Association for Computational Linguistics: ACL 2023},
+      pages={6570--6588},
+      year={2023}}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            We appreciate the original source code from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
