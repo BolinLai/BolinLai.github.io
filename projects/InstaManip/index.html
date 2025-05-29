@@ -119,6 +119,12 @@
                   <span>HuggingFace</span>
                 </a>
               </span>
+              <span class="link-block">
+                <a href="https://cvpr.thecvf.com/media/PosterPDFs/CVPR%202025/32621.png?t=1748313084.6108608" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fas fa-image"></i></span>
+                  <span>Poster</span>
+                </a>
+              </span>
             </div>
           </div>
         </div>
@@ -140,7 +146,8 @@
       <!-- <div class="column is-four-fifths"> -->
         <div class="content has-text-justified">
           <p>
-            When learning a new image manipulation operation that is <strong><i>unseen</i></strong> in the training set (as shown above), textual instructions directly point out the subject and provide high-level semantic guidance, while exemplar images mitigate linguistic ambiguity and show more local details that are difficult to describe in language. Our proposed multi-modal autoregressive model -- <strong><i>InstaManip</i></strong> takes advantage of both textual and visual guidance to learn a representation of the desired transformation, and applies it to a new query image.
+            When learning a new image manipulation operation that is <strong><i>unseen</i></strong> in the training set (as shown above), textual instructions directly point out the subject and provide high-level semantic guidance, while exemplar images mitigate linguistic ambiguity and show more local details that are difficult to describe in language. 
+            Our proposed multi-modal autoregressive model -- <strong><i>InstaManip</i></strong> takes advantage of both textual and visual guidance to learn a representation of the desired transformation, and applies it to a new query image.
           </p>
         </div>
       <!-- </div> -->
@@ -200,8 +207,25 @@
               <img src="figures/method.png"  style="width:100%;">
             </center>
           </div>
+          <div class="columns is-centered has-text-centered">
+            <div class="content has-text-justified">
+              <p>
+                Overview of the proposed InstaManip architecture (left) and group self-attention mechanism (right, represented by query-key matrix). 
+                We first tokenize all input texts and images, and fill them in a prompt template with learnable manipulation and generation tokens. 
+                We input the prompt into the proposed model which is composed of N blocks. 
+                The group self-attention layer in each block learns an explicit manipulation representation Z and applies it to the new query image. 
+                We forward final generation tokens and query image to the image decoder for final image synthesis. 
+                In the left part, we only show the self-attention correlations that connect with manipulation tokens or generation tokens for brevity. 
+                We also omit encoders, input projection layers and skip connections for simplicity.
+              </p>
+            </div>
+          </div>
         </div>
-        
+
+        </br>
+        </br>
+        </br>
+
         <h2 class="title is-3">Visualization</h2>
         <div class="container is-max-desktop">
           <div class="hero-body">
@@ -218,7 +242,18 @@
               <img src="figures/ablation.png"  style="width:80%;">
             </center>
           </div>
+          <div class="columns is-centered has-text-centered">
+            <div class="content has-text-justified">
+              <p>
+                Qualitative evaluation of the contribution of (a) each component, and (b) each modality in the contexts.
+              </p>
+            </div>
+          </div>
         </div>
+
+        </br>
+        </br>
+        </br>
 
         <h2 class="title is-3">Same Textual Instructions + Different Exemplar Images</h2>
         <div class="container is-max-desktop">
@@ -227,7 +262,19 @@
               <img src="figures/same_txt_diff_img.png"  style="width:100%;">
             </center>
           </div>
+          <div class="columns is-centered has-text-centered">
+            <div class="content has-text-justified">
+              <p>
+                The visualization of manipulating the query image using the same textual instruction, yet different visual examples. 
+                When we use exemplar target images of Lamborghini with different colors, our model successfully captures this local feature from the visual guidance, and changes the colors in the generated images accordingly. 
+              </p>
+            </div>
+          </div>
         </div>
+
+        </br>
+        </br>
+        </br>
 
         <h2 class="title is-3">Scaling Up with More Exemplar Images</h2>
         <div class="container is-max-desktop">
@@ -236,7 +283,18 @@
               <img src="figures/scaleup.png"  style="width:80%;">
             </center>
           </div>
+          <div class="columns is-centered has-text-centered">
+            <div class="content has-text-justified">
+              <p>
+                The performance of our model can be boosted by either involving more exemplar images, or increasing the diversity of visual prompts (green line vs. blue line).
+              </p>
+            </div>
+          </div>
         </div>
+
+        </br>
+        </br>
+        </br>
 
         <h2 class="title is-3">Additional Visualization</h2>
         <div class="container is-max-desktop">
