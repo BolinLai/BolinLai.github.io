@@ -27,6 +27,16 @@ body {
   font-family: 'Google Sans', sans-serif;
 }
 
+.image{
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.caption{
+  padding-top: 0rem;
+  padding-bottom: 2rem;
+}
+
 
 .publication-title {
 }

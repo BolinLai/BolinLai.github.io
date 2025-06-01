@@ -43,7 +43,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Unleashing In-context Learning of Autoregressive Models for Few-shot Image Manipulation</h1>
+          <h1 class="title is-2 publication-title">Unleashing In-context Learning of Autoregressive Models for Few-shot Image Manipulation</h1>
           <div class="is-size-4 publication-conference">
             <span class="conference-block" style="font-size: 30px; color:darkred">CVPR 2025 (Highlight)</span>
           </div>
@@ -90,9 +90,6 @@
             <span class="author-block"><sup>4</sup>Sungkyunkwan University</span>&nbsp;&nbsp;&nbsp;
             <span class="author-block"><sup>5</sup>University of Wisconsin-Madison</span>
           </div>
-          <!-- <div class="is-size-6 publication-authors">
-            <span class="author-block"><sup>*</sup>Work partially done during an internship at Meta GenAI.</span>
-          </div> -->
           <div class="column has-text-centered">
             <div class="publication-links">
               <span class="link-block">
@@ -142,15 +139,15 @@
         <img src="figures/teaser.png"  style="width:100%;">
       </center>
     </div>
-    <div class="columns is-centered has-text-centered">
-      <!-- <div class="column is-four-fifths"> -->
+    <div class="hero-body">
+      <div class="columns is-centered has-text-centered">
         <div class="content has-text-justified">
           <p>
             When learning a new image manipulation operation that is <strong><i>unseen</i></strong> in the training set (as shown above), textual instructions directly point out the subject and provide high-level semantic guidance, while exemplar images mitigate linguistic ambiguity and show more local details that are difficult to describe in language. 
             Our proposed multi-modal autoregressive model -- <strong><i>InstaManip</i></strong> takes advantage of both textual and visual guidance to learn a representation of the desired transformation, and applies it to a new query image.
           </p>
         </div>
-      <!-- </div> -->
+      </div>
     </div>
   </div>
 </section>
@@ -171,42 +168,43 @@
 </section>
 <!-- End video -->
 
+<hr>
 
 <section class="section">
   <div class="container is-max-desktop">
-    <h2 class="title is-3">Abstract</h2>
+    <center><h2 class="title is-3">Abstract</h2></center>
+    <br>
     <div class="columns is-centered has-text-centered">
-      <!-- <div class="column is-four-fifths"> -->
-        <div class="content has-text-justified">
-          <p>
-            Text-guided image manipulation has experienced notable advancement in recent years. 
-            In order to mitigate linguistic ambiguity, few-shot learning with visual examples has been applied for instructions that are underrepresented in the training set, or difficult to describe purely in language. 
-            However, learning from visual prompts requires strong reasoning capability, which diffusion models are struggling with. 
-            To address this issue, we introduce a novel multi-modal autoregressive model, dubbed InstaManip, that can instantly learn a new image manipulation operation from textual and visual guidance via in-context learning, and apply it to new query images. 
-            Specifically, we propose an innovative group self-attention mechanism to break down the in-context learning process into two separate stages -- learning and applying, which simplifies the complex problem into two easier tasks. 
-            We also introduce a relation regularization method to further disentangle image transformation features from irrelevant contents in exemplar images. 
-            Extensive experiments suggest that our method surpasses previous few-shot image manipulation models by a notable margin (≥ 19% in human evaluation). 
-            We also find our model can be further boosted by increasing the number or diversity of exemplar images.
-          </p>
-        </div>
-      <!-- </div> -->
+      <div class="content has-text-justified">
+        <p>
+          Text-guided image manipulation has experienced notable advancement in recent years. 
+          In order to mitigate linguistic ambiguity, few-shot learning with visual examples has been applied for instructions that are underrepresented in the training set, or difficult to describe purely in language. 
+          However, learning from visual prompts requires strong reasoning capability, which diffusion models are struggling with. 
+          To address this issue, we introduce a novel multi-modal autoregressive model, dubbed InstaManip, that can instantly learn a new image manipulation operation from textual and visual guidance via in-context learning, and apply it to new query images. 
+          Specifically, we propose an innovative group self-attention mechanism to break down the in-context learning process into two separate stages -- learning and applying, which simplifies the complex problem into two easier tasks. 
+          We also introduce a relation regularization method to further disentangle image transformation features from irrelevant contents in exemplar images. 
+          Extensive experiments suggest that our method surpasses previous few-shot image manipulation models by a notable margin (≥ 19% in human evaluation). 
+          We also find our model can be further boosted by increasing the number or diversity of exemplar images.
+        </p>
+      </div>
     </div>
   </div>
 </section>
 
+<hr>
 
 <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column is-full-width">
 
-        <h2 class="title is-3">The Proposed Method</h2>
-        <div class="container is-max-desktop">
-          <div class="hero-body">
-            <center>
-              <img src="figures/method.png"  style="width:100%;">
-            </center>
-          </div>
+        <center><h2 class="title is-3">The Proposed Method</h2></center>
+        <div class="image">
+          <center>
+            <img src="figures/method.png"  style="width:100%;">
+          </center>
+        </div>
+        <div class="caption">
           <div class="columns is-centered has-text-centered">
             <div class="content has-text-justified">
               <p>
@@ -220,28 +218,24 @@
               </p>
             </div>
           </div>
+          <hr>
         </div>
 
-        </br>
-        </br>
-        </br>
-
-        <h2 class="title is-3">Visualization</h2>
-        <div class="container is-max-desktop">
-          <div class="hero-body">
-            <center>
-              <img src="figures/demo1.png"  style="width:100%;">
-            </center>
-          </div>
+        <center><h2 class="title is-3">Visualization</h2></center>
+        <div class="image">
+          <center>
+            <img src="figures/demo1.png"  style="width:100%;">
+          </center>
+          <hr>
         </div>
 
-        <h2 class="title is-3">Ablation Study</h2>
-        <div class="container is-max-desktop">
-          <div class="hero-body">
-            <center>
-              <img src="figures/ablation.png"  style="width:80%;">
-            </center>
-          </div>
+        <center><h2 class="title is-3">Ablation Study</h2></center>
+        <div class="image">
+          <center>
+            <img src="figures/ablation.png"  style="width:80%;">
+          </center>
+        </div>
+        <div class="caption">
           <div class="columns is-centered has-text-centered">
             <div class="content has-text-justified">
               <p>
@@ -249,19 +243,16 @@
               </p>
             </div>
           </div>
+          <hr>
         </div>
 
-        </br>
-        </br>
-        </br>
-
-        <h2 class="title is-3">Same Textual Instructions + Different Exemplar Images</h2>
-        <div class="container is-max-desktop">
-          <div class="hero-body">
-            <center>
-              <img src="figures/same_txt_diff_img.png"  style="width:100%;">
-            </center>
-          </div>
+        <center><h2 class="title is-3">Same Textual Instructions + Different Exemplar Images</h2></center>
+        <div class="image">
+          <center>
+            <img src="figures/same_txt_diff_img.png"  style="width:100%;">
+          </center>
+        </div>
+        <div class="caption">
           <div class="columns is-centered has-text-centered">
             <div class="content has-text-justified">
               <p>
@@ -270,39 +261,31 @@
               </p>
             </div>
           </div>
+          <hr>
         </div>
 
-        </br>
-        </br>
-        </br>
-
-        <h2 class="title is-3">Scaling Up with More Exemplar Images</h2>
-        <div class="container is-max-desktop">
-          <div class="hero-body">
-            <center>
-              <img src="figures/scaleup.png"  style="width:80%;">
-            </center>
-          </div>
+        <center><h2 class="title is-3">Scaling Up with More Exemplar Images</h2></center>
+        <div class="image">
+          <center>
+            <img src="figures/scaleup.png"  style="width:80%;">
+          </center>
+        </div>
+        <div class="caption">
           <div class="columns is-centered has-text-centered">
             <div class="content has-text-justified">
               <p>
-                The performance of our model can be boosted by either involving more exemplar images, or increasing the diversity of visual prompts (green line vs. blue line).
+                The performance of our model can be boosted by either involving more exemplar images (in all the three settings), or increasing the diversity of visual prompts (green line vs. blue line).
               </p>
             </div>
           </div>
+          <hr>
         </div>
 
-        </br>
-        </br>
-        </br>
-
-        <h2 class="title is-3">Additional Visualization</h2>
-        <div class="container is-max-desktop">
-          <div class="hero-body">
-            <center>
-              <img src="figures/demo2.png"  style="width:100%;">
-            </center>
-          </div>
+        <center><h2 class="title is-3">Additional Visualization</h2></center>
+        <div class="image">
+          <center>
+            <img src="figures/demo2.png"  style="width:100%;">
+          </center>
         </div>
 
       </div>
@@ -313,7 +296,7 @@
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
+    <center><h2 class="title">BibTeX</h2></center>
     <pre><code>@article{lai2024unleashing,
       title={Unleashing In-context Learning of Autoregressive Models for Few-shot Image Manipulation},
       author={Lai, Bolin and Juefei-Xu, Felix and Liu, Miao and Dai, Xiaoliang and Mehta, Nikhil and Zhu, Chenguang and Huang, Zeyi and Rehg, James M and Lee, Sangmin and Zhang, Ning and Xiao, Tong},
