@@ -20,6 +20,7 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_HTMLorMML-full"></script>
   <style>
     table {
       font-family: Arial, sans-serif;
@@ -43,10 +44,10 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Incorporating Flexible Image Conditioning into Text-to-Video Diffusion Models without Training</h1>
-          <div class="is-size-4 publication-conference">
-            <span class="conference-block" style="font-size: 30px; color:darkred">Under Review 2025</span>
-          </div>
+          <h1 class="title is-2 publication-title">Incorporating Flexible Image Conditioning into Text-to-Video Diffusion Models without Training</h1>
+          <!-- <div class="is-size-4">
+            <span style="font-size: 30px; color:darkred">Under Review 2025</span>
+          </div> -->
           <br>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
@@ -70,7 +71,6 @@
             <span class="author-block"><sup>2</sup>University of Illinois Urbana-Champaign</span>&nbsp;&nbsp;&nbsp;
             <span class="author-block"><sup>3</sup>Sungkyunkwan University</span>
           </div>
-
           <div class="column has-text-centered">
             <div class="publication-links">
               <span class="link-block">
@@ -108,88 +108,141 @@
         <img src="figures/teaser.png"  style="width:100%;">
       </center>
     </div>
-    <div class="columns is-centered has-text-centered">
-      <!-- <div class="column is-four-fifths"> -->
+    <div class="hero-body">
+      <div class="columns is-centered has-text-centered">
         <div class="content has-text-justified">
           <p>
-            In this work, we propose <strong><i>FlexTI2V</i></strong>, a novel training-free approach that can add additional image conditioning to off-the-shelf text-to-video foundation models. Then we are able to frame an arbitrary number of images at arbitrary positions in the synthetic video with vivid motion and smooth transitions. In this figure, images with blue edges are condition images, and images with green edges are generated video frames
+            In this work, we propose <strong><i>FlexTI2V</i></strong>, a novel training-free approach that can add additional image conditioning to off-the-shelf text-to-video foundation models. 
+            Then we are able to frame an arbitrary number of images at arbitrary positions in the synthetic video with vivid motion and smooth transitions. 
+            In this figure, images with blue edges are condition images, and images with green edges are generated video frames.
           </p>
         </div>
-      <!-- </div> -->
+      </div>
     </div>
   </div>
 </section>
 <!-- End teaser -->
 
 
-<!-- Video-->
-<!-- <section class="hero teaser">
-  <div class="container is-max-desktop">
-    <br>
-    <br>
-    <div class="hero-body">
-      <center>
-        <iframe width="864" height="486" src="https://www.youtube.com/embed/JedJi_f-oQk?si=KQZ1flz85Hjq3SR2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      </center>
-    </div>
-  </div>
-</section> -->
-<!-- End video -->
-
-
 <section class="section">
   <div class="container is-max-desktop">
-    <h2 class="title is-3">Abstract</h2>
-    <div class="columns is-centered has-text-centered">
-      <!-- <div class="column is-four-fifths"> -->
-        <div class="content has-text-justified">
-          <p>
-            Text-image-to-video (TI2V) generation is a critical problem for controllable video generation using both semantic and visual conditions. 
-            Most existing methods typically add visual conditions to text-to-video (T2V) foundation models by finetuning, which is costly in resources and only limited to a few predefined conditioning settings. 
-            To tackle this issue, we introduce a unified formulation for TI2V generation with flexible visual conditioning. 
-            Furthermore, we propose an innovative training-free approach, dubbed <strong>FlexTI2V</strong>, that can condition T2V foundation models on an arbitrary amount of images at arbitrary positions. 
-            Specifically, we firstly invert the condition images to noisy representation in a latent space. 
-            Then, in the denoising process of T2V models, our method uses a novel random patch swapping strategy to incorporate visual features into video representations through local image patches. 
-            To balance creativity and fidelity, we use a dynamic control mechanism to adjust the strength of visual conditioning to each video frame. 
-            Extensive experiments validate that our method surpasses previous training-free image conditioning methods by a notable margin. 
-            We also show more insights of our method by detailed ablation study and analysis.
-          </p>
-        </div>
-      <!-- </div> -->
+    <center><h2 class="title is-4">Classic TI2V Settings</h2></center>
+    <div class="video-container">
+        <video class="responsive-video" controls>
+            <source src="./figures/demo_classic.mp4" type="video/mp4">
+        </video>
+    </div>
+    <center><h2 class="title is-4">Novel TI2V Settings</h2></center>
+    <div class="video-container">
+        <video class="responsive-video" controls>
+            <source src="./figures/demo_new.mp4" type="video/mp4">
+        </video>
     </div>
   </div>
 </section>
 
+
+<hr>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <center><h2 class="title is-3">Abstract</h2></center>
+    <br>
+    <div class="columns is-centered has-text-centered">
+      <div class="content has-text-justified">
+        <p>
+          Text-image-to-video (TI2V) generation is a critical problem for controllable video generation using both semantic and visual conditions. 
+          Most existing methods typically add visual conditions to text-to-video (T2V) foundation models by finetuning, which is costly in resources and only limited to a few predefined conditioning settings. 
+          To tackle this issue, we introduce a unified formulation for TI2V generation with flexible visual conditioning. 
+          Furthermore, we propose an innovative training-free approach, dubbed <strong>FlexTI2V</strong>, that can condition T2V foundation models on an arbitrary amount of images at arbitrary positions. 
+          Specifically, we firstly invert the condition images to noisy representation in a latent space. 
+          Then, in the denoising process of T2V models, our method uses a novel random patch swapping strategy to incorporate visual features into video representations through local image patches. 
+          To balance creativity and fidelity, we use a dynamic control mechanism to adjust the strength of visual conditioning to each video frame. 
+          Extensive experiments validate that our method surpasses previous training-free image conditioning methods by a notable margin. 
+          We also show more insights of our method by detailed ablation study and analysis.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr>
 
 <section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column is-full-width">
 
-        <h2 class="title is-3">Unified Text-Image-to-Video Generation</h2>
-        <div class="container is-max-desktop">
-          <div class="hero-body">
-            <center>
-              <img src="figures/tasks.png"  style="width:100%;">
-            </center>
+        <center><h2 class="title is-3">Unified Text-Image-to-Video Generation</h2></center>
+        <div class="image">
+          <center>
+            <img src="figures/tasks.png"  style="width:100%;">
+          </center>
+        </div>
+        <div class="caption">
+          <div class="columns is-centered has-text-centered">
+            <div class="content has-text-justified">
+              <p>
+                Comparison with classic TI2V tasks. 
+                Our task requires video generation conditioned on any number of images at any positions, which unifies existing classic TI2V tasks. 
+                The images with blue and pink edges are condition images, and images with green edges are generated video frames.
+              </p>
+            </div>
           </div>
+          <hr>
         </div>
 
-        <h2 class="title is-3">The Proposed Method</h2>
-        <div class="container is-max-desktop">
-          <div class="hero-body">
-            <center>
-              <img src="figures/method.png"  style="width:100%;">
-            </center>
+        <center><h2 class="title is-3">The Proposed Method</h2></center>
+        <div class="image">
+          <center>
+            <img src="figures/method.png"  style="width:100%;">
+          </center>
+        </div>
+        <div class="caption">
+          <div class="columns is-centered has-text-centered">
+            <div class="content has-text-justified">
+              <p>
+                Overview of the proposed FlexTI2V approach. 
+                We invert the condition image embedding to noisy representation `\tilde{mathbf{x}}_t` at each step. 
+                The final noise `\tilde{\mathbf{x}}_T` is reused as initialization for video synthesis. 
+                At step t, we directly replace the video frames with images at the desired positions. 
+                Then, for each video frame, we randomly swap a portion of patches with bounded condition images based on the relative distance between the frame and images. 
+                Though we show a special case of using two condition images in this figure, our method can naturally extend to any number of images at any positions. 
+                Note that all operations of our method occur in the latent space. We visualize RGB images and frames on the latent representations only for intuitive understanding.
+              </p>
+            </div>
           </div>
+          <hr>
         </div>
 
-        <h2 class="title is-3">Comparison with Prior Methods</h2>
-        <div class="container is-max-desktop">
-          <div class="hero-body">
-            <center>
-              <img src="figures/cmp_sota.png"  style="width:100%;">
-            </center>
+        <center><h2 class="title is-3">Comparison with Prior Methods</h2></center>
+        <div class="image">
+          <center>
+            <img src="figures/cmp_sota.png"  style="width:100%;">
+          </center>
+        </div>
+        <div class="caption">
+          <div class="columns is-centered has-text-centered">
+            <div class="content has-text-justified">
+              <p>
+                Quantitative comparison with previous methods. 
+                “DC” is short for DynamiCrafter. 
+                “User” denotes the user study results. 
+                ↓ means a lower score in this metric indicates a better performance. 
+                The best results are highlighted with boldface. 
+                The orange row refers to our FlexTI2V method.
+              </p>
+            </div>
+          </div>
+          <hr>
+        </div>
+
+        <center><h2 class="title is-3">Ablation Study</h2></center>
+        <div class="hero-body">
+          <div class="video-container">
+            <video class="responsive-video" controls>
+              <source src="./figures/demo_ablation.mp4" type="video/mp4">
+            </video>
           </div>
         </div>
 
@@ -198,15 +251,6 @@
           <div class="hero-body">
             <center>
               <img src="figures/demo1.png"  style="width:100%;">
-            </center>
-          </div>
-        </div>
-
-        <h2 class="title is-3">Ablation Study</h2>
-        <div class="container is-max-desktop">
-          <div class="hero-body">
-            <center>
-              <img src="figures/ablation.png"  style="width:80%;">
             </center>
           </div>
         </div>
@@ -229,7 +273,11 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code></code></pre>
+    <pre><code>@article{lai2025incorporating,
+    title={Incorporating Flexible Image Conditioning into Text-to-Video Diffusion Models without Training},
+    author={Lai, Bolin and Lee, Sangmin and Cao, Xu and Li, Xiang and Rehg, James M},
+    journal={arXiv preprint arXiv:2505.20629},
+    year={2025}}</code></pre>
   </div>
 </section>
 
