@@ -2,6 +2,31 @@ body {
   font-family: 'Noto Sans', sans-serif;
 }
 
+.publication-title {
+    font-family: 'Google Sans', sans-serif;
+}
+
+.publication-authors {
+    font-family: 'Google Sans', sans-serif;
+}
+
+.publication-authors a {
+   color: hsl(204, 86%, 53%) !important;
+}
+
+.publication-authors a:hover {
+    text-decoration: underline;
+}
+
+.author-block {
+  display: inline-block;
+}
+
+.link-block a {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
 .footer .icon-link {
     font-size: 25px;
     color: #000;
@@ -75,27 +100,77 @@ body {
     border-radius: 4px; /* Optional: aesthetic choice for rounded corners on the video */
 }
 
-.publication-title {
-    font-family: 'Google Sans', sans-serif;
+/* --- The Video Grid --- */
+.video-grid {
+    display: grid;
+    /* * This is the core of the responsive grid.
+      * 'repeat': Creates repeating columns.
+      * 'auto-fit': Fits as many columns as possible on one line, then wraps.
+      * 'minmax(320px, 1fr)': Each column will be a minimum of 320px wide.
+      * If there's extra space, the '1fr' allows them to grow and share it.
+      * On smaller screens (like phones), only one column will fit.
+      */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    /* Align items to the start (top) of the grid cell. 
+    This prevents shorter videos from being vertically centered, which can look odd. */
+    align-items: start;
+    gap: 20px; /* This creates the space between the videos */
+    max-width: 1400px; /* Optional: Sets a max width for the whole grid */
+    margin: 0 auto; /* Centers the grid on the page */
+    padding-top: 1rem;
+    padding-bottom: 3rem;
 }
 
-.publication-authors {
-    font-family: 'Google Sans', sans-serif;
+.video-grid-large {
+    display: grid;
+    /* * This is the core of the responsive grid.
+      * 'repeat': Creates repeating columns.
+      * 'auto-fit': Fits as many columns as possible on one line, then wraps.
+      * 'minmax(400px, 1fr)': Each column will be a minimum of 320px wide.
+      * If there's extra space, the '1fr' allows them to grow and share it.
+      * On smaller screens (like phones), only one column will fit.
+      */
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    /* Align items to the start (top) of the grid cell. 
+    This prevents shorter videos from being vertically centered, which can look odd. */
+    align-items: start;
+    gap: 20px; /* This creates the space between the videos */
+    max-width: 1400px; /* Optional: Sets a max width for the whole grid */
+    margin: 0 auto; /* Centers the grid on the page */
+    padding-top: 1rem;
+    padding-bottom: 3rem;
 }
 
-.publication-authors a {
-   color: hsl(204, 86%, 53%) !important;
+/* --- Individual Video Item Styling --- */
+.video-item {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    overflow: hidden; /* This is crucial to make the video corners rounded */
+    display: flex;
+    flex-direction: column;
 }
 
-.publication-authors a:hover {
-    text-decoration: underline;
+.video-item video {
+    width: 100%;
+    /*
+      * To enforce the "same height" rule visually and create a uniform grid,
+      * we set a fixed height and use object-fit.
+      */
+    height: auto; /* Height is calculated automatically */
+    object-fit: cover; /* * This is the magic property! It makes the video cover the
+                        * entire space (100% width, 200px height), maintaining its
+                        * aspect ratio by cropping any excess from the sides.
+                        * This prevents the video from being stretched or squished.
+                        */
+    display: block; /* Removes any extra space below the video */
+    background-color: #000; /* Shows a black background if video is slow to load */
 }
 
-.author-block {
-  display: inline-block;
-}
-
-.link-block a {
-    margin-top: 5px;
-    margin-bottom: 5px;
+/* Optional: Adding a title below each video */
+.video-title {
+    padding: 15px;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #2d3748;
 }
