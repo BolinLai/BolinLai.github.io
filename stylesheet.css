@@ -134,3 +134,28 @@ h2 {
 span.highlight {
   background-color: #ffffd0;
 }
+
+/* Publications tabs */
+.pub-tabs {
+  display: flex;
+  gap: 8px;
+}
+
+.pub-tab-btn {
+  background: transparent;
+  border: 1px solid #ccc;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.pub-tab-btn.active {
+  background: #1772d0;
+  color: #fff;
+  border-color: #1772d0;
+}
+
+.is-hidden {
+  display: none !important;
+}
