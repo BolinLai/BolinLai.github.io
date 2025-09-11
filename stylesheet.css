@@ -159,3 +159,7 @@ span.highlight {
 .is-hidden {
   display: none !important;
 }
+
+.grey-text {
+  color: #888888;
+}
