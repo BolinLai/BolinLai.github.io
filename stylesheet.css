@@ -186,3 +186,20 @@ span.highlight {
     display: block;
   }
 }
+
+/* Stack profile photo above intro on mobile */
+@media (max-width: 700px) {
+  .profile-table tr {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .profile-table td {
+    width: 100% !important;
+    max-width: 100% !important;
+    text-align: center !important;
+    display: block;
+    padding: 2.5% !important;
+    box-sizing: border-box;
+  }
+}
