@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Toward Diffusible High-Dimensional Latent Spaces: A Frequency Perspective">
+  <meta name="keywords" content="image manipulation, in-context learning, autoregressive model">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Toward Diffusible High-Dimensional Latent Spaces: A Frequency Perspective</title>
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/gt_icon.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_HTMLorMML-full"></script>
+  <style>
+    table {
+      font-family: Arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    th {
+      background-color: #dddddd;
+    }
+  </style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title">Toward Diffusible High-Dimensional Latent Spaces: A Frequency Perspective</h1>
+          <!-- <div class="is-size-4">
+            <span style="font-size: 30px; color:darkred">Under Review</span>
+          </div> -->
+          <!-- <br> -->
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://bolinlai.github.io/">Bolin Lai</a><sup>1,2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://people.eecs.berkeley.edu/~xdwang/">Xudong Wang</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://rssaketh.github.io/">Saketh Rambhatla</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://rehg.org/">James M. Rehg</a><sup>3</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://faculty.cc.gatech.edu/~zk15/">Zsolt Kira</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://rohitgirdhar.github.io/">Rohit Girdhar</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://imisra.github.io/">Ishan Misra</a><sup>1</sup>
+            </span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Meta AI</span>&nbsp;&nbsp;&nbsp;
+            <span class="author-block"><sup>2</sup>Georgia Institute of Technology</span>&nbsp;&nbsp;&nbsp;
+            <span class="author-block"><sup>3</sup>University of Illinois Urbana-Champaign</span>
+          </div>
+          <div class="column has-text-centered">
+            <span class="link-block">
+              <a href="" class="external-link button is-normal is-rounded is-dark">
+                <span class="icon"><i class="ai ai-arxiv"></i></span>
+                <span>Paper</span>
+              </a>
+            </span>
+            <span class="link-block">
+              <a href="" class="external-link button is-normal is-rounded is-dark">
+                <span class="icon"><i class="fab fa-github"></i></span>
+                <span>Code</span>
+              </a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <center><h2 class="title is-3">Abstract</h2></center>
+    <br>
+    <div class="columns is-centered has-text-centered">
+      <div class="content has-text-justified">
+        <p>
+          Latent diffusion has become the default paradigm for visual generation, yet we observe a persistent reconstruction-generation trade-off as latent dimensionality increases: higher-capacity autoencoders improve reconstruction fidelity but generation quality eventually declines. 
+          We trace this gap to the different behaviors in high-frequency encoding and decoding. 
+          Through controlled perturbations in both RGB and latent domains, we analyze encoder/decoder behaviors and find that decoders depend strongly on high-frequency latent components to recover details, whereas encoders under-represent high-frequency contents, yielding insufficient exposure and underfitting in high-frequency bands for diffusion model training. 
+          To address this issue, we introduce FreqWarm, a plug-and-play frequency warm-up curriculum that increases early-stage exposure to high-frequency latent signals during diffusion or flow-matching training -- without modifying or retraining the autoencoder. 
+          Applied across several high-dimensional autoencoders, FreqWarm consistently improves generation quality: decreasing gFID by 14.11 on Wan2.2-VAE, 6.13 on LTX-VAE, and 4.42 on DC-AE-f32, while remaining architecture-agnostic and compatible with diverse backbones. 
+          Our study shows that explicitly managing frequency exposure can successfully turn high-dimensional latent spaces into more diffusible targets.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+
+        <center><h2 class="title is-3">The Proposed Method</h2></center>
+        <div class="image">
+          <center>
+            <img src="figures/teaser.png"  style="width:80%;">
+          </center>
+        </div>
+        <div class="caption">
+          <div class="columns is-centered has-text-centered">
+            <div class="content has-text-justified">
+              <p>
+                There is a natural trade-off between reconstruction (how well the decoder can recover encoded images) and generation (how close the synthetic image distribution is to real image distribution) with regard to the dimension of latent space, as illustrated in Fig. 1. 
+                When the number of channel expands, the reconstruction performance consistently improves (blue), while the generation performance improves at the beginning and then decreases (green).
+              </p>
+            </div>
+          </div>
+          <hr>
+        </div>
+
+        <center><h2 class="title is-3">Frequency Analysis</h2></center>
+        <div class="image">
+          <center>
+            <img src="figures/latent_freq_analysis.png"  style="width:80%;">
+          </center>
+        </div>
+        <div class="caption">
+          <div class="columns is-centered has-text-centered">
+            <div class="content has-text-justified">
+              <p>
+                <b>Finding 1:</b> Decoder relies more on the information encoded in high-frequency latent embeddingsto reconstruct details and semantics in RGB space.
+              </p>
+            </div>
+          </div>
+          <hr>
+        </div>
+        <div class="image">
+          <center>
+            <img src="figures/rgb_freq_analysis.png"  style="width:80%;">
+          </center>
+        </div>
+        <div class="caption">
+          <div class="columns is-centered has-text-centered">
+            <div class="content has-text-justified">
+              <p>
+                <b>Finding 2:</b> In RGB space, most information of images exist in a narrow low-frequency band, which is different from the distribution in latent space.
+              </p>
+            </div>
+          </div>
+          <hr>
+        </div>
+        <div class="image">
+          <center>
+            <img src="figures/latent_freq.png"  style="width:80%;">
+          </center>
+        </div>
+        <div class="caption">
+          <div class="columns is-centered has-text-centered">
+            <div class="content has-text-justified">
+              <p>
+                <b>Finding 3:</b> Extremely high-frequency components in RGB space have marginal contributions to the image quality, but may impede the encoding of other high-frequency signals.
+              </p>
+            </div>
+          </div>
+          <hr>
+        </div>
+
+        <center><h2 class="title is-3">FreqWarm</h2></center>
+        <div class="image">
+          <center>
+            <img src="figures/method.png"  style="width:60%;">
+          </center>
+        </div>
+        <div class="caption">
+          <div class="columns is-centered has-text-centered">
+            <div class="content has-text-justified">
+              <p>
+                We filter out high-frequency components above a frequency threshold r0 in the RGB space. 
+                The filtered images are forwarded into a pretrained autoencoder. 
+                We train diffusion models or flow matching models on top of the latent space in the early training stage for warm-up. 
+                Note that the autoencoder is kept frozen throughout training in our method.
+              </p>
+            </div>
+          </div>
+          <hr>
+        </div>
+
+        <center><h2 class="title is-3">Visualization</h2></center>
+        <div class="image">
+          <center>
+            <img src="figures/demo.png"  style="width:100%;">
+          </center>
+          <hr>
+        </div>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <center><h2 class="title">BibTeX</h2></center>
+    <pre><code></code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+          <p>
+            We appreciate the original source code from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
